@@ -29,14 +29,15 @@
 .container .box-container .left-container button {
   background-color: rgba(179, 166, 166, 0.667);
   border: 0px;
-  cursor: pointer;
   border-radius: 10px;
   width: 30px;
   height: 30px;
   appearance: none;
   text-align: center;
   background-image: url("../img/hamburger.svg");
-  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
 }
 .container .box-container .left-container .contents-left {
   margin: 2% 20% 0px 20%;
@@ -59,11 +60,12 @@
   border-radius: 30px;
   font-size: 16px;
   background-image: url("https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-24.png");
-  background-position: 10px 7px;
+  background-size: 16px;
+  background-position: 10px;
   background-repeat: no-repeat;
   padding: 8px 20px 8px 40px;
   outline: none;
-  opacity: 0.9;
+  opacity: 0.6;
 }
 .container .box-container .left-container .contents-left h4 {
   color: #FFFFFF;
@@ -79,27 +81,36 @@
   margin-top: 3%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 5%;
+  gap: 6%;
 }
 .container .box-container .left-container .contents-left .project-cards .card {
-  margin-bottom: 30%;
+  margin-bottom: 5%;
 }
 .container .box-container .left-container .contents-left .project-cards .card .card-picture {
-  width: 100%;
-  height: 95%;
+  width: 83px;
+  height: 83px;
   border-radius: 8px;
   justify-content: center;
+  color: #FFFFFF;
   align-items: center;
   padding: 8% 0 8% 0;
   display: flex;
-  background-color: green;
+  cursor: pointer;
 }
 .container .box-container .left-container .contents-left .project-cards .card .card-text p {
+  margin-top: 5px;
+  font-size: x-small;
   text-align: center;
+  color: #b7b7b7;
+}
+.container .box-container .left-container .contents-left .project-cards .card-picture:active {
+  border: rgb(126, 255, 120) 3px solid;
+  padding: 10px;
 }
 .container .box-container .right-container {
   background-color: #ffffff;
   border-radius: 8px;
+  position: relative;
 }
 .container .box-container .right-container .contents-right {
   margin: 2% 8% 0px 8%;
@@ -141,7 +152,9 @@
   margin-left: 10px;
   background-color: #ffffff;
   background-image: url("../img/plus.svg");
-  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
   border: 2px #b7b7b7 solid;
 }
 .container .box-container .right-container .contents-right .toolbar button {
@@ -164,16 +177,60 @@
   font-size: large;
   font-weight: bold;
   overflow: hidden;
-  max-height: 45vh;
+  max-height: 48vh;
   overflow-y: auto;
 }
 .container .box-container .right-container .contents-right .todo-container .todos-list .todo {
   font-size: small;
   font-weight: lighter;
   margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .box-container .right-container .contents-right .todo-container .todos-list .todo .checkbox__input {
+  cursor: pointer;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #b7b7b7;
+  border-radius: 50%;
+}
+.container .box-container .right-container .contents-right .todo-container .todos-list .todo .checkbox__input:checked {
+  border-color: #52C6C4;
+  background-color: #52C6C4;
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='14px' height='10px' viewBox='0 0 14 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 59.1 (86144) - https://sketch.com --%3E%3Ctitle%3Echeck%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='ios_modification' transform='translate(-27.000000, -191.000000)' fill='%23FFFFFF' fill-rule='nonzero'%3E%3Cg id='Group-Copy' transform='translate(0.000000, 164.000000)'%3E%3Cg id='ic-check-18px' transform='translate(25.000000, 23.000000)'%3E%3Cpolygon id='check' points='6.61 11.89 3.5 8.78 2.44 9.84 6.61 14 15.56 5.05 14.5 4'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: 13px 13px;
+  background-repeat: no-repeat;
 }
 .container .box-container .right-container .contents-right .todo-container .todos-list .todo .status {
-  justify-content: end;
+  padding: 6px;
+  border-radius: 12px;
+  font-size: 10px;
+  width: 20%;
+  text-align: center;
+}
+.container .box-container .right-container .contents-right .add-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 6%;
+  background-color: #d738dc;
+  border: none;
+  padding: 16px;
+  background-position: center;
+  background-image: url("../img/plus-white.svg");
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 3px 4px 5px -2px rgba(0, 0, 0, 0.25);
+}
+.container .box-container .right-container .contents-right .add-button:hover {
+  background-color: #c109c7;
+}
+.container .box-container .right-container .contents-right .add-button:active {
+  transform: translateY(1px);
 }
 @media only screen and (max-width: 800px) {
   .container .container {
@@ -197,6 +254,15 @@
     grid-template-columns: repeat(2, 1fr);
     overflow-y: scroll;
     max-height: 50vh;
+  }
+  .container .box-container .right-container .todo-container {
+    margin-bottom: 6rem;
+  }
+  .container .box-container .right-container .add-button {
+    bottom: 0;
+    right: 0;
+    margin: 1%;
+    background-color: chartreuse;
   }
 }
 

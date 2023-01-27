@@ -30,8 +30,9 @@
   background-color: rgba(179, 166, 166, 0.667);
   border: 0px;
   cursor: pointer;
-  padding: 20px;
   border-radius: 10px;
+  width: 30px;
+  height: 30px;
   appearance: none;
   text-align: center;
   background-image: url("../img/hamburger.svg");
@@ -100,18 +101,114 @@
   background-color: #ffffff;
   border-radius: 8px;
 }
+.container .box-container .right-container .contents-right {
+  margin: 2% 8% 0px 8%;
+}
+.container .box-container .right-container .contents-right .toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .box-container .right-container .contents-right .toolbar .toolbar-title {
+  font-weight: bold;
+  font-size: 20px;
+  color: #000000;
+}
+.container .box-container .right-container .contents-right .toolbar ul {
+  display: flex;
+  margin: 20px;
+  flex-direction: row;
+  align-items: center;
+}
+.container .box-container .right-container .contents-right .toolbar ul li {
+  list-style: none;
+}
+.container .box-container .right-container .contents-right .toolbar ul li a {
+  display: block;
+}
+.container .box-container .right-container .contents-right .toolbar ul li a .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: #FFFFFF 2px solid;
+  border-radius: 50px;
+  margin-left: -10px;
+}
+.container .box-container .right-container .contents-right .toolbar ul li a button {
+  vertical-align: middle;
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  background-color: #ffffff;
+  background-image: url("../img/plus.svg");
+  background-size: cover;
+  border: 2px #b7b7b7 solid;
+}
+.container .box-container .right-container .contents-right .toolbar button {
+  vertical-align: middle;
+  padding: 10px;
+  border-radius: 50px;
+  border: none;
+  width: 30px;
+  height: 30px;
+}
+.container .box-container .right-container .contents-right .toolbar-subtitle {
+  margin-top: -3%;
+  font-size: 13px;
+  color: #b7b7b7;
+  letter-spacing: 0.5px;
+  text-align: justify;
+}
+.container .box-container .right-container .contents-right .todo-container {
+  margin-top: 2em;
+  font-size: large;
+  font-weight: bold;
+  overflow: hidden;
+  max-height: 45vh;
+  overflow-y: auto;
+}
+.container .box-container .right-container .contents-right .todo-container .todos-list .todo {
+  font-size: small;
+  font-weight: lighter;
+  margin: 5px;
+}
+.container .box-container .right-container .contents-right .todo-container .todos-list .todo .status {
+  justify-content: end;
+}
 @media only screen and (max-width: 800px) {
+  .container .container {
+    background-color: cadetblue;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
   .container .box-container {
     grid-template-columns: repeat(1, 1fr);
     grid-column-start: 2;
     grid-template-rows: 2fr 3fr;
+    overflow: hidden;
+    overflow-y: scroll;
+    width: 95vw;
+    min-height: 95vh;
+    max-height: 100vh;
   }
   .container .box-container .left-container .contents-left .project-cards {
-    gap: 0;
-    grid-template-columns: repeat(1, 1fr);
+    gap: 5%;
+    grid-template-columns: repeat(2, 1fr);
     overflow-y: scroll;
+    max-height: 50vh;
   }
-  .container .box-container .left-container .contents-left .project-cards .card {
-    margin-bottom: 3px;
-  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DDDDDD;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cbcbcb;
 }/*# sourceMappingURL=styles.css.map */

@@ -3,6 +3,7 @@ $white-box: #ffffff;
 $box-color: #13005A;
 $white-font: #FFFFFF;
 $grey-font: #b7b7b7;
+$black-font: #000000;
 
 * {
     margin: 0;
@@ -12,41 +13,42 @@ $grey-font: #b7b7b7;
     word-spacing: 3px;
 }
 
-.container{
+.container {
     background-color: $body-color;
     height: 100vh;
+    // min-height: 100vh;
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    .box-container{
+    .box-container {
         padding: 12px;
         width: 80%;
         height: 90%;
         border-radius: 8px;
-        box-shadow: 0px 30px 20px -16px rgba(0,0,0,0.25);
+        box-shadow: 0px 30px 20px -16px rgba(0, 0, 0, 0.25);
         background-color: $box-color;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         align-content: stretch;
         gap: 6px;
 
-        .left-container{
-            button{
+        .left-container {
+            button {
                 background-color: rgba(179, 166, 166, 0.667);
                 border: 0px;
                 cursor: pointer;
-                padding: 20px;
                 border-radius: 10px;
+                width: 30px;
+                height: 30px;
                 appearance: none;
                 text-align: center;
                 background-image: url("../img/hamburger.svg");
                 background-size: cover;
             }
 
-            .contents-left{
-                // border: 1px white solid;
+            .contents-left {
                 margin: 2% 20% 0px 20%;
 
                 h2 {
@@ -54,7 +56,7 @@ $grey-font: #b7b7b7;
                     color: $white-font;
                 }
 
-                p{
+                p {
                     margin-top: 0.5%;
                     font-size: 12px;
                     color: $grey-font;
@@ -65,41 +67,42 @@ $grey-font: #b7b7b7;
                 .searchInput {
                     width: 100%;
                     margin-top: 7%;
-              
+
                     border: none;
                     border-radius: 30px;
                     font-size: 16px;
-                    background-image:url('https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-24.png');
-              
+                    background-image: url('https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-24.png');
+
                     background-position: 10px 7px;
                     background-repeat: no-repeat;
                     padding: 8px 20px 8px 40px;
                     outline: none;
                     opacity: 0.9;
-              
-                  }
 
-                  h4{
+                }
+
+                h4 {
                     color: $white-font;
                     font-weight: lighter;
                     margin-top: 8%;
                     letter-spacing: 0.5px;
 
-                    small{
+                    small {
                         color: $grey-font;
                         font-weight: lighter;
                     }
-                  }
+                }
 
-                  .project-cards{
+                .project-cards {
                     margin-top: 3%;
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);
                     gap: 5%;
 
-                    .card{
+                    .card {
                         margin-bottom: 30%;
-                        .card-picture{
+
+                        .card-picture {
                             width: 100%;
                             height: 95%;
                             border-radius: 8px;
@@ -110,37 +113,144 @@ $grey-font: #b7b7b7;
                             background-color: green;
                         }
 
-                        .card-text{
-                            p{
+                        .card-text {
+                            p {
                                 text-align: center;
                             }
                         }
                     }
-                  }
+                }
             }
         }
 
-        .right-container{
+        .right-container {
             background-color: $white-box;
             border-radius: 8px;
+
+            .contents-right {
+                margin: 2% 8% 0px 8%;
+
+                .toolbar {
+                    display: flex;
+                    justify-content: space-between;
+                    // background: blueviolet;
+                    align-items: center;
+
+                    .toolbar-title {
+                        font-weight: bold;
+                        font-size: 20px;
+                        color: $black-font;
+                    }
+
+                    ul {
+                        display: flex;
+                        margin: 20px;
+                        flex-direction: row;
+                        align-items: center;
+
+                        li {
+                            list-style: none;
+
+                            a {
+                                display: block;
+
+                                .avatar {
+                                    width: 40px;
+                                    height: 40px;
+                                    border-radius: 50%;
+                                    border: $white-font 2px solid;
+                                    border-radius: 50px;
+                                    margin-left: -10px;
+                                }
+
+                                button {
+                                    vertical-align: middle;
+                                    width: 25px;
+                                    height: 25px;
+                                    margin-left: 10px;
+                                    background-color: $white-box;
+                                    background-image: url("../img/plus.svg");
+                                    background-size: cover;
+                                    border: 2px $grey-font solid;
+                                }
+
+                            }
+
+                        }
+                    }
+
+                    button {
+                        vertical-align: middle;
+                        padding: 10px;
+                        border-radius: 50px;
+                        border: none;
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+
+                .toolbar-subtitle {
+                    margin-top: -3%;
+                    font-size: 13px;
+                    color: $grey-font;
+                    letter-spacing: .5px;
+                    text-align: justify;
+                }
+
+                .todo-container {
+                    margin-top: 2em;
+                    font-size: large;
+                    font-weight: bold;
+                    overflow: hidden;
+                    max-height: 45vh;
+                    overflow-y: auto;
+
+                    .todos-list {
+                        .todo {
+                            font-size: small;
+                            font-weight: lighter;
+                            margin: 5px;
+
+                            .status {
+                                justify-content: end;
+                            }
+                        }
+
+                    }
+                }
+
+                
+            }
         }
     }
 
-    @media only screen and (max-width: 800px){
-        .box-container{
+    @media only screen and (max-width: 800px) {
+
+        .container {
+            background-color: cadetblue;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .box-container {
             grid-template-columns: repeat(1, 1fr);
             grid-column-start: 2;
             grid-template-rows: 2fr 3fr;
 
-            .left-container{
-                .contents-left{
-                    .project-cards{
-                        gap: 0;
-                        grid-template-columns: repeat(1, 1fr);
+            overflow: hidden;
+            overflow-y: scroll;
+            width: 95vw;
+            min-height: 95vh;
+            max-height: 100vh;
+
+            .left-container {
+                .contents-left {
+                    .project-cards {
+                        gap: 5%;
+                        grid-template-columns: repeat(2, 1fr);
                         overflow-y: scroll;
-                        .card{
-                            margin-bottom: 3px;
-                        }
+                        max-height: 50vh;
                     }
                 }
             }
@@ -149,3 +259,15 @@ $grey-font: #b7b7b7;
     }
 }
 
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: $body-color;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #cbcbcb;
+}

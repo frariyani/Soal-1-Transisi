@@ -86,37 +86,65 @@ projects.forEach(obj => {
     `
 })
 
+var li, div, input, label1, label2
+
 tasks.forEach(obj => {
     const randIndex = Math.floor(Math.random() * statusList.length)
 
-    document.querySelector('.todos-list ul').innerHTML +=`
-        <li class="todo">
-            <div class="item-input">
-                <input class="checkbox__input" type="checkbox" id="checkbox${obj.index}" ${obj.checked ? "checked" : ""}>
-                <span class="checkbox__inner"></span>
-                <label for="checkbox${obj.index}">${obj.name}</label>
-            </div>
+    li = document.createElement("li")
+    div = document.createElement("div")
+    input = document.createElement("input")
+    label1 = document.createElement("label")
+    label2 = document.createElement("label")
 
-            <label style="background-color: ${statusList[randIndex].background}; color: ${statusList[randIndex].color};" class="status">${statusList[randIndex].name}</label>
-        </li>
-    `;
+    li.className = "todo"
+    div.className = "item-input"
+    input.className = "checkbox__input"
+    label2.className = "status"
+
+    input.type = "checkbox"
+    label2.style.backgroundColor = statusList[randIndex].background
+    label2.style.color = statusList[randIndex].color
+
+    li.appendChild(div)
+    div.appendChild(input)
+    div.appendChild(label1)
+    li.appendChild(label2)
+
+    label1.innerHTML = obj.name
+    label2.innerHTML = statusList[randIndex].name
+
+    document.querySelector(".item").appendChild(li)
 
 })
 
 document.querySelector("#add").onclick = function(){
+
     const randIndex = Math.floor(Math.random() * tasks.length)
     const statusIndex = Math.floor(Math.random() * statusList.length)
 
-    document.querySelector('.todos-list ul').innerHTML +=`
-        <li class="todo">
-            <div class="item-input">
-                <input class="checkbox__input" type="checkbox" id="checkbox${tasks[randIndex].index}" ${tasks[randIndex].checked ? "checked" : ""}>
-                <span class="checkbox__inner"></span>
-                <label for="checkbox${tasks[randIndex].index}">${tasks[randIndex].name}</label>
-            </div>
+    li = document.createElement("li")
+    div = document.createElement("div")
+    input = document.createElement("input")
+    label1 = document.createElement("label")
+    label2 = document.createElement("label")
 
-            <label style="background-color: ${statusList[statusIndex].background}; color: ${statusList[statusIndex].color};" class="status">${statusList[statusIndex].name}</label>
-        
-        </li>
-    `;
+    li.className = "todo"
+    div.className = "item-input"
+    input.className = "checkbox__input"
+    label2.className = "status"
+
+    input.type = "checkbox"
+    label2.style.backgroundColor = statusList[statusIndex].background
+    label2.style.color = statusList[statusIndex].color
+
+    li.appendChild(div)
+    div.appendChild(input)
+    div.appendChild(label1)
+    li.appendChild(label2)
+
+    label1.innerHTML = tasks[randIndex].name
+    label2.innerHTML = statusList[statusIndex].name
+
+    document.querySelector(".item").appendChild(li)
 }

@@ -87,8 +87,8 @@
   margin-bottom: 5%;
 }
 .container .box-container .left-container .contents-left .project-cards .card .card-picture {
-  width: 83px;
-  height: 83px;
+  min-width: 83px;
+  min-height: 83px;
   border-radius: 8px;
   justify-content: center;
   color: #FFFFFF;
@@ -232,7 +232,7 @@
 .container .box-container .right-container .contents-right .add-button:active {
   transform: translateY(1px);
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 962px) {
   .container .container {
     background-color: cadetblue;
     overflow: hidden;
@@ -254,6 +254,10 @@
     grid-template-columns: repeat(2, 1fr);
     overflow-y: scroll;
     max-height: 50vh;
+  }
+  .container .box-container .left-container .contents-left .project-cards .card .card-picture {
+    height: 100%;
+    width: 100%;
   }
   .container .box-container .right-container .todo-container {
     margin-bottom: 6rem;

@@ -102,8 +102,8 @@ $add-button: #d738dc;
                         margin-bottom: 5%;
 
                         .card-picture {
-                            width: 83px;
-                            height: 83px;
+                            min-width: 83px;
+                            min-height: 83px;
                             border-radius: 8px;
                             justify-content: center;
                             color: $white-font;
@@ -281,7 +281,7 @@ $add-button: #d738dc;
         }
     }
 
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 962px) {
 
         .container {
             background-color: cadetblue;
@@ -308,6 +308,14 @@ $add-button: #d738dc;
                         grid-template-columns: repeat(2, 1fr);
                         overflow-y: scroll;
                         max-height: 50vh;
+
+                        .card{
+                            .card-picture{
+                                height: 100%;
+                                width: 100%;
+                            }
+
+                        }
                     }
                 }
             }
